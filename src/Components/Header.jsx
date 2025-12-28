@@ -1,8 +1,10 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const showSignin = pathname !== '/dashboard';
 
   const clickHandler = (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Header = () => {
                 <option>English</option>
                 <option>Hindi</option>
               </select>
-              <button className="btn btn-danger" onClick={clickHandler}>Signin</button>
+              {showSignin && <button className="btn btn-danger" onClick={clickHandler}>Signin</button>}
             </form>
           </div>
         </div>

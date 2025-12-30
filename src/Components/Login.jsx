@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { initializeApp } from 'firebase/app';
-import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseConfig } from './firebaseConfig';
 import { useEffect, useState } from "react";
 
 const Login = () => {
 
- const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -79,20 +79,22 @@ const Login = () => {
         <br />
         <form>
           <input
-            className="form-control" 
+            className="form-control"
             value={email}
             onChange={emailOnChangeHandler}
-            type="email" 
-            placeholder="Email" />
+            type="email"
+            placeholder="Email"
+            aria-label="Email" />
 
           {!emailValid && <p className="text-danger">Email is invalid/blank</p>}
-          
-          <input 
-          className="form-control" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Password" />
+
+          <input
+            className="form-control"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Password"
+            aria-label="Password" />
 
           {!passwordValid && <p className="text-danger">Password is invalid/blank</p>}
 
@@ -124,7 +126,7 @@ const Login = () => {
         </div>
       </div>
       <div className="shadow"></div>
-      <img className="concord-img vlv-creative" src="https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/IN-en-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="" />
+      <img className="concord-img vlv-creative" src="https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/IN-en-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="Netflix Background" />
     </div>
   )
 }
